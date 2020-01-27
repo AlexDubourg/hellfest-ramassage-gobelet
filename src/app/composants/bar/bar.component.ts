@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bar.component.css']
 })
 export class BarComponent implements OnInit {
-  public nom: Bar;
+  public nom: string;
 
   constructor() {
     this.nom = "War Zone";
