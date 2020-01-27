@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bar.component.css']
 })
 export class BarComponent implements OnInit {
+  private nom: string;
 
-  constructor() { }
+  constructor() {
+    this.nom = "War Zone";
+   }
 
   ngOnInit() {
   }
 
+}
+
+export interface Bar {
+    nom: string;
+    compteur: Object[];
 }
