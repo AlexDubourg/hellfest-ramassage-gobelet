@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../../services/firebase.service';
+
 
 @Component({
   selector: 'app-bar',
@@ -6,18 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bar.component.css']
 })
 export class BarComponent implements OnInit {
-  public nom: string;
 
-  constructor() {
-    this.nom = "War Zone";
-   }
+  ageValue: number = 0;
+  items: Array<any>;
+
+  constructor(
+    public firebaseService: FirebaseService
+  ) { }
 
   ngOnInit() {
+    this.getData();
   }
 
+  getData(){
+    this.firebaseService.getBars()
+    .subscribe(result => {
+      this.items = result
+    })
+  }
 }
 
 export interface Bar {
     nom: string;
-    compteur: Object[];
+    compteur: number;
 }
+
+  
