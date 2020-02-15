@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
 
-  constructor(public db: AngularFirestore) {}
+  constructor(public db: AngularFireDatabase) {}
 
+/*
   getBars(){
     return this.db.collection('bars').valueChanges()
   }
@@ -59,4 +63,5 @@ export class FirebaseService {
       avatar: avatar
     });
   }
+  */
 }

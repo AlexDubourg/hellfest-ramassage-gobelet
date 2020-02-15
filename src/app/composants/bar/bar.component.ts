@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { FirebaseService } from '../../services/firebase.service';
 
 
@@ -21,10 +22,12 @@ export class BarComponent implements OnInit {
   }
 
   getData(){
+    /*
     this.firebaseService.getBars()
     .subscribe(result => {
       this.items = result
     })
+    */
   }
 }
 
